@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/JonasBordewick/Advent-Of-Code-2023/day1"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/utils"
 )
 
@@ -14,7 +15,10 @@ func main() {
 	fmt.Printf("Starting to solve advent of code puzzle of day %d\n", day+1)
 	switch day {
 	case 0:
-		fmt.Printf("the puzzle has not yet been solved")
+		err := day1.SolveDayOne()
+		if err != nil {
+			return
+		}
 	case 1:
 		fmt.Printf("the puzzle has not yet been solved")
 	case 2:

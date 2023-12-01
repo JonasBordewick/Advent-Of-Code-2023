@@ -60,3 +60,12 @@ func ReadStringFromFile(filepath string) ([]string, error) {
 	}
 	return lines, nil
 }
+
+func SumIntSlice(calibrationValues []int) int {
+	var sum = 0
+
+	for _, value := range calibrationValues {
+		sum += value
+	}
+	return sum
+}
