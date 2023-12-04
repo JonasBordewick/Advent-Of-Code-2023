@@ -78,14 +78,20 @@ func SolveDayTwo() error {
 		return err
 	}
 
-	solutionPart1, err := solvePart1(lines)
+	games, err := generateGames(lines)
+	if err != nil {
+		fmt.Printf("error at solve day2 with generateGames(lines): %s\n", err.Error())
+		return err
+	}
+
+	solutionPart1, err := solvePart1(games)
 	if err != nil {
 		fmt.Printf("error at solve day2 with solvePart1(): %s\n", err.Error())
 		return err
 	}
 	fmt.Printf("Die Lösung für Tag 2 Part 1 ist %d!\n", solutionPart1)
 
-	solutionPart2, err := solvePart2(lines)
+	solutionPart2, err := solvePart2(games)
 	if err != nil {
 		fmt.Printf("error at solve day2 with solvePart2(): %s\n", err.Error())
 		return err
@@ -96,12 +102,8 @@ func SolveDayTwo() error {
 	return nil
 }
 
-func solvePart1(lines []string) (int, error) {
+func solvePart1(games []*Game) (int, error) {
 	bag := &GameBag{RedCubes: 12, GreenCubes: 13, BlueCubes: 14}
-	games, err := generateGames(lines)
-	if err != nil {
-		return -1, err
-	}
 
 	var sum = 0
 
@@ -151,12 +153,8 @@ func generateGames(lines []string) ([]*Game, error) {
 	return games, nil
 }
 
-func solvePart2(lines []string) (int, error) {
+func solvePart2(games []*Game) (int, error) {
 	bag := &GameBag{RedCubes: 12, GreenCubes: 13, BlueCubes: 14}
-	games, err := generateGames(lines)
-	if err != nil {
-		return -1, err
-	}
 
 	var sum = 0
 
