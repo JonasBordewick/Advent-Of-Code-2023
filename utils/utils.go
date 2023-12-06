@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"regexp"
 	"strconv"
 	"strings"
 )
@@ -68,4 +69,22 @@ func SumIntSlice(calibrationValues []int) int {
 		sum += value
 	}
 	return sum
+}
+
+func MakeIntSlice(input string) ([]int64, int64, error) {
+	var re = regexp.MustCompile(`(?m)\d+`)
+	matches := re.FindAllStringSubmatch(input, -1)
+	var output []int64 = make([]int64, 0)
+	var max int64 = 0
+	for _, match := range matches {
+		number, err := strconv.ParseInt(match[0], 10, 64)
+		if err != nil {
+			return nil, -1, err
+		}
+		if number > max {
+			max = number
+		}
+		output = append(output, number)
+	}
+	return output, max, nil
 }
