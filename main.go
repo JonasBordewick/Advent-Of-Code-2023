@@ -9,6 +9,7 @@ import (
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day5"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day6"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day7"
+	"github.com/JonasBordewick/Advent-Of-Code-2023/day8"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/utils"
 )
 
@@ -56,7 +57,10 @@ func main() {
 			return
 		}
 	case 7:
-		fmt.Printf("the puzzle has not yet been solved")
+		err := day8.SolveDay()
+		if err != nil {
+			return
+		}
 	case 8:
 		fmt.Printf("the puzzle has not yet been solved")
 	case 9:
