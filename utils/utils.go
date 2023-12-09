@@ -72,7 +72,7 @@ func SumIntSlice(calibrationValues []int) int {
 }
 
 func MakeIntSlice(input string) ([]int64, int64, error) {
-	var re = regexp.MustCompile(`(?m)\d+`)
+	var re = regexp.MustCompile(`(?m)-?\d+`)
 	matches := re.FindAllStringSubmatch(input, -1)
 	var output []int64 = make([]int64, 0)
 	var max int64 = 0
@@ -87,4 +87,13 @@ func MakeIntSlice(input string) ([]int64, int64, error) {
 		output = append(output, number)
 	}
 	return output, max, nil
+}
+
+func All(value int64, values []int64) bool {
+	for _, x := range values {
+		if x != value {
+			return false
+		}
+	}
+	return true
 }
