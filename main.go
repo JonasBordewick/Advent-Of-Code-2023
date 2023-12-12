@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day1"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day10"
+	"github.com/JonasBordewick/Advent-Of-Code-2023/day11"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day2"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day3"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day4"
@@ -74,7 +75,10 @@ func main() {
 			return
 		}
 	case 10:
-		fmt.Printf("the puzzle has not yet been solved")
+		err := day11.SolveDay()
+		if err != nil {
+			return
+		}
 	case 11:
 		fmt.Printf("the puzzle has not yet been solved")
 	case 12:
