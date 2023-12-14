@@ -5,6 +5,9 @@ import (
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day1"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day10"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day11"
+	"github.com/JonasBordewick/Advent-Of-Code-2023/day12"
+	"github.com/JonasBordewick/Advent-Of-Code-2023/day13"
+	"github.com/JonasBordewick/Advent-Of-Code-2023/day14"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day2"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day3"
 	"github.com/JonasBordewick/Advent-Of-Code-2023/day4"
@@ -80,11 +83,20 @@ func main() {
 			return
 		}
 	case 11:
-		fmt.Printf("the puzzle has not yet been solved")
+		err := day12.SolveDay()
+		if err != nil {
+			return
+		}
 	case 12:
-		fmt.Printf("the puzzle has not yet been solved")
+		err := day13.SolveDay()
+		if err != nil {
+			return
+		}
 	case 13:
-		fmt.Printf("the puzzle has not yet been solved")
+		err := day14.SolveDay()
+		if err != nil {
+			return
+		}
 	case 14:
 		fmt.Printf("the puzzle has not yet been solved")
 	case 15:
